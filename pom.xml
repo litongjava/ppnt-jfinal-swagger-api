@@ -28,46 +28,40 @@
   </repositories>
 
   <dependencies>
-    <!-- servlet -->
-    <!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> <version>3.1.0</version> <scope>provided</scope> </dependency> -->
     <!-- jfinal -->
     <dependency>
       <groupId>com.jfinal</groupId>
-      <artifactId>jfinal</artifactId>
-      <version>4.3</version>
+      <artifactId>jfinal-undertow</artifactId>
+      <version>2.5</version>
       <scope>provided</scope>
     </dependency>
-    <!-- servlet容器 -->
+
     <dependency>
       <groupId>com.jfinal</groupId>
-      <artifactId>jfinal-undertow</artifactId>
-      <version>1.7</version>
+      <artifactId>jfinal</artifactId>
+      <version>4.9.23</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
-    <finalName>jfinal-swagger-api</finalName>
-    <defaultGoal>compile</defaultGoal>
-    <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-    
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-          <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-            <encoding>UTF-8</encoding>
-            <!-- java8 保留参数名编译参数 -->
-            <compilerArgument>-parameters</compilerArgument>
-            <compilerArguments>
-              <verbose />
-            </compilerArguments>
-          </configuration>
-        </plugin>
-      </plugins>
-    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+          <!-- java8 保留参数名编译参数 -->
+          <compilerArgument>-parameters</compilerArgument>
+          <compilerArguments>
+            <verbose />
+          </compilerArguments>
+        </configuration>
+      </plugin>
+    </plugins>
+
 
     <resources>
       <!-- 解决包下部分非java未同步编译问题 -->

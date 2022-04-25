@@ -1,13 +1,10 @@
 package top.ppnt.jfinal.swaager.api.controller;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
 
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.kit.Okv;
 import com.jfinal.template.Engine;
 
@@ -16,9 +13,8 @@ import top.ppnt.jfinal.swaager.api.services.SwaggerService;
 /**
  * Swagger UI Controller
  */
+@Path("swagger")
 public class SwaggerController extends Controller {
-  private final String DEFAULT_STYLE = "layui";
-  private final Set<String> STYLE_SET = new HashSet<String>(Arrays.asList("layui,default".split(",")));
   private static final String RESOURCE_BASE_PATH = "/META-INF/resources/swagger/";
   private static Engine engine = Engine.use().setBaseTemplatePath(RESOURCE_BASE_PATH);
 
@@ -33,9 +29,7 @@ public class SwaggerController extends Controller {
    * api页面
    */
   public void index() {
-    String style = getPara(0, DEFAULT_STYLE);
-    style = style == null || !STYLE_SET.contains(style.trim()) ? DEFAULT_STYLE : style.trim();
-    renderHtml(engine.getTemplate(style + "/index.html").renderToString(null));
+    renderHtml(engine.getTemplate("layui" + "/index.html").renderToString(null));
   }
 
   /**
