@@ -98,7 +98,16 @@ public class AppConfig extends JFinalConfig {
   }
 }
 ```
-4.添加Controller类
+4.修改undertow.txt添加undertow.resourcePath
+```
+undertow.devMode=true
+undertow.host=127.0.0.1
+undertow.port=8000
+undertow.contextPath=/jfinal-4.9-ppnt-jfinal-swagger-api
+
+undertow.resourcePath = classpath:META-INF/resources
+```
+5.添加Controller类
 IndexController 添加文档
 ```
 package top.ppnt.jfinal.swagger.controller;
@@ -167,10 +176,10 @@ public class UserController extends Controller {
   }
 }
 ```
-5.启动访问测试  
+6.启动访问测试  
 http://127.0.0.1:8000/工程名/swagger/  
 
-6.获取文档描述信息  
+7.获取文档描述信息  
 http://127.0.0.1:8000/工程名/swagger/api
 响应如下  
 可以将文档描述信息导入到postman,apifox,apipost中
@@ -185,6 +194,6 @@ http://127.0.0.1:8000/工程名/swagger/
 ![](readme_files/7.jpg)
 ### 默认显示效果
 请求地址  
-http://127.0.0.1:8000/工程名/swagger/default
+http://127.0.0.1:8000/工程名/swagger/default/
 
 ![](readme_files/8.jpg)
