@@ -5,6 +5,6 @@ package top.ppnt.jfinal.swaager.api.constants;
  *
  */
 public class PpntSwaggerConstants {
-  public static final String packageName = "top.ppnt.jfinal.swaager.api";
-  public static final String controllerPackageName = packageName + ".controller.";
+  public static final String PACKAGE_NAME = "top.ppnt.jfinal.swaager.api";
+  public static final String CONTROLLER_PACKAGE_NAME = PACKAGE_NAME + ".controller.";
 }
