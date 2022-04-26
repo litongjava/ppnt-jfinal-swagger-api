@@ -12,11 +12,11 @@ var tempBodyType = $.templates('#temp_body_type');
 var contextPath = getContextPath();
 
 function getContextPath() {
-    /*var pathName = document.location.pathname;
+    var pathName = document.location.pathname;
     var index = pathName.substr(1).indexOf("/");
-    var result = pathName.substr(0, index + 1);*/
+    var result = pathName.substr(0, index + 1);
     //return location.host;
-	return "";
+	return result;
 }
 
 $(function () {
